@@ -10,8 +10,8 @@ def main():
 
 def move_to_newspaper():
     """ Helping function to move Karel to the newspaper location. """
-    move()
-    move()
+    while not front_is_blocked():
+        move()
     turn_right()
     move()
     turn_left()
@@ -33,7 +33,7 @@ def pick_up_paper():
 
 def return_to_start():
     """ Helping function to move Karel back to its starting position. """
-    for i in range(3):
+    while not front_is_blocked():
         move()
     turn_right()
     move()
